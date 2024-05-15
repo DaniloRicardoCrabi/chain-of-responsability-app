@@ -1,0 +1,35 @@
+{
+    "txnNumber": 23,
+    "lsid": {
+        "id": "17210ff0-0342-4f13-a8c3-c0fd3f1d8160",
+        "uid": "ddqot68vLpBUPnOuqFj2cdClv/dv/vF9ZVSwknYHEsE="
+    },
+    "_id": {
+        "_data": "826644E010000000732B042C01002B026E5A1004D80CDB3FB35E4D9183C250D300EB17D5463C6F7065726174696F6E54797065003C696E736572740046646F63756D656E744B65790046645F696400646644E010FCBDD89C170F9167000004"
+    },
+    "operationType": "insert",
+    "clusterTime": {
+        "$timestamp": "7369261249609072755"
+    },
+    "wallTime": "2024-05-15T16:17:20.194Z",
+    "fullDocument": {
+        "_id": "6644e010fcbdd89c170f9167",
+        "sentToQueue": false,
+        "document": "11930405669",
+        "cars": [
+            "car1",
+            "car2",
+            "car3"
+        ],
+        "createdAt": "2024-05-15T16:17:20.274Z",
+        "updatedAt": "2024-05-15T16:17:20.274Z",
+        "__v": 0
+    },
+    "ns": {
+        "db": "test",
+        "coll": "OutBox"
+    },
+    "documentKey": {
+        "_id": "6644e010fcbdd89c170f9167"
+    }
+}
