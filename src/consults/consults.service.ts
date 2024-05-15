@@ -30,7 +30,7 @@ export class ConsultsService {
       await consult.save({ session });
       await outbox.save({ session });
 
-      throw new Error();
+    // throw new Error();
       this.logger.log('Transaction not committed');
       await session.commitTransaction();
       this.logger.log('Transaction committed');

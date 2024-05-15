@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProcessingModule } from './processing/processing.module';
@@ -8,9 +9,17 @@ import { OutboxModule } from './outbox/outbox.module';
 
 @Module({
   imports: [
-    MongooseModule.forRoot(
-      '',
-    ),
+    ConfigModule.forRoot({
+      isGlobal: true,
+    }),
+    MongooseModule.forRootAsync({
+      inject: [ConfigService],
+      useFactory: async (configService: ConfigService) => {
+        return {
+          uri: configService.get<string>('MONGO_URI'),
+        };
+      },
+    }),
     ProcessingModule,
     ConsultsModule,
     OutboxModule,
